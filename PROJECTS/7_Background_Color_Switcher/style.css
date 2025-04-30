@@ -1,0 +1,14 @@
+.button {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000;
+  }
+
+  #red { background: red; }
+  #blue { background: blue; }
+  #yellow { background: yellow; }
+  #green { background: green; }

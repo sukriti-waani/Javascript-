@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops</title>
+</head>
+<body>
+  <script>
+//                          While loop
+
+    // let num = 1; //initialization
+    // while(num <= 10) { // condition
+    //   console.log(num);
+    //   num++; // updating
+    // }
+    // console.log('Final value of num is: ' + num);
+
+    // let x = 0;
+    // while(x < 1) {
+    //   console.log(x);
+    //   x = Math.random() * 2;
+    // }
+    // console.log('Final value of x is: ' + x);
+
+
+//                          Do while loop
+
+    // let num = 0;
+    // do {
+    //   console.log(num);
+    //   num++;
+    // }while(num > 5);
+
+
+//                          For loop
+
+    // for(let num = 1; num <=10; num++) {
+    //   console.log(num);
+    // }
+
+    // let nums = [2,5,3,9,8,-90,34,78];
+    // for( let index = 0; index < nums.length; index++){
+    //   console.log(nums[index]);
+    // }
+
+
+//                          Accumulator Pattern
+
+    // let nums = [3,6,7,9,4];
+    // let sum = 0;
+    // for (let i =0; i<nums.length; i++){
+    //   sum += nums[i];
+    // }
+    // console.log(`Sum of the array is ${sum}`);
+
+    // let squares = [];
+    // for (let i = 0; i<nums.length; i++){
+    //   // squares[i] = nums[i] * nums[i];
+    //   squares.push(nums[i] * nums[i]);
+    // }
+    // console.log(squares);
+
+
+//                         Break & Continue
+// Break lets us to stop a loop early, or break out of a loop
+// Continue is used to skip one iteration or the current iteration
+
+    // for( let i = 0; i < 50; i++) {
+    //   console.log(i);
+    //   if(i === 34) {
+    //     break;
+    //   }
+    // }
+
+    // let arr = [1,2,4,5,6,8,3,9];
+    // for (let i = 0; i < arr.length; i++) {
+    //   if(arr[i] === 8){
+    //     console.log(`Number found at index ${i}`);
+    //     break;
+    //   }
+    //   console.log('Still looking');
+    // }
+
+
+    for(let i =1; i <= 25; i++){
+      if( i % 2 == 0){
+        continue;
+      }
+      console.log(i); 
+    }
+
+  </script>
+</body>
+</html>

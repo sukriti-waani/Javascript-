@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON, Local Storage </title>
+</head>
+<body>
+  <script>
+
+//                        JSON
+
+    // let product = {
+    //   name: 'T-shirt',
+    //   price: 560,
+    //   rating: {
+    //     stars: 4.5,
+    //     noOfReviews: 450,
+    //   },
+    // }; 
+    // console.log(typeof product);
+    // console.log(product);
+    // let str = JSON.stringify(product); // converts object into string
+    // console.log(typeof str);
+    // console.log(str);
+
+    // let newProduct = JSON.parse(str); // converts string into object
+    // console.log(typeof newProduct);
+    // console.log(newProduct);
+
+
+//                             Local Storage
+
+let product = {
+      name: 'T-shirt',
+      price: 560,
+      rating: {
+        stars: 4.5,
+        noOfReviews: 450,
+      },
+    };
+
+    // these values are permanentaly saved under application of local storage even after removing the code
+    // localStorage.setItem('Name','Sukriti');
+    // localStorage.setItem('Price', '900000'); 
+    // console.log(localStorage.getItem('Name'));
+
+    localStorage.setItem('product', JSON.stringify(product));
+    console.log(localStorage.getItem('product'));
+    let product2 = JSON.parse(localStorage.getItem('product'));
+    console.log(product2);
+    localStorage.removeItem('Price');
+    localStorage.clear();
+
+  </script>
+</body>
+</html>
