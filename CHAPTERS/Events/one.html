@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Events</title>
+</head>
+<body style="background-color: #414241; color: aliceblue;">
+   <h2>Amazing Image</h2>
+   <div>
+    <ul id="images">
+      <li><img width="200px" id="clouds" src="clouds.jpeg" alt="photoshop"></li>
+      <li><img width="200px" id="flowers" src="flowers.jpg" alt=""></li>
+      <li><img width="200px" id="landscape" src="landscape.jpeg" alt=""></li>
+      <li><img width="200px" id="sunset" src="sunset.jpeg" alt=""></li>
+      <li><img width="200px" id="vintage" src="vintage.jpeg" alt=""></li>
+      <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+   </div>
+</body>
+<script>
+  //  document.getElementById('flowers').onclick = function() {
+  //   alert("flowers clicked")
+  //  }
+
+
+  // Capturing mode goes from top to bottom (first clicked inside the ul and then flowers clicked will show)
+  // document.getElementById('images').addEventListener('click' , function(e) {
+//     console.log("Clicked inside the ul")
+//   }, true)
+  
+//   document.getElementById('flowers').addEventListener('click' , function(e) {
+//     // alert("flowers clicked")
+//     console.log("Flowers clicked")
+//   }, true)
+
+  // Bubbling mode goes from bottom to up (first flowers clicked and then clicked inside the ul will show)
+  // document.getElementById('images').addEventListener('click' , function(e) {
+  //   console.log("Clicked inside the ul")
+  // }, false)
+  
+  // document.getElementById('flowers').addEventListener('click' , function(e) {
+  //   // alert("flowers clicked")
+  //   console.log("Flowers clicked")
+  // }, false)
+
+  // document.getElementById('google').addEventListener('click', function(e){
+  //   e.preventDefault();
+  //   e.stopPropagation(); // removing bubbling up
+  //   console.log("google clicked")
+  // }, flase)
+
+  document.querySelector("#images").addEventListener('click' , function(e) {
+    
+    // console.log(e.target.parentNode);
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG') {
+      console.log(e.target.id);
+      
+      let removeit = e.target.parentNode;
+
+      removeit.remove();
+      // removeit.parentNode.removeChild(removeit);
+    }
+  }, false)
+
+
+</script>
+</html>
