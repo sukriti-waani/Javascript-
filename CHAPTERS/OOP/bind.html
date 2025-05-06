@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <button>Button Clicked</button>
+  </body>
+  <script>
+    class React {
+      constructor() {
+        this.library = "React";
+        this.server =
+          "http://127.0.0.1:5500/Javascript-/CHAPTERS/OOP/bind.html";
+
+        // requirement
+        document
+          .querySelector("button")
+          .addEventListener("click", this.handleClick.bind(this));  // Binds the handleClick method to the current class instance so that this inside handleClick() refers to the class, not the button.
+      }
+      handleClick() {
+        console.log("Button Clicked");
+        console.log(this.server);
+      }
+    }
+  </script>
+</html>
