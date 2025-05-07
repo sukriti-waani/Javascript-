@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #212121">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // function init() {
+    //   let name = "Raj";
+    //   function displayName() { // displayName is the inner function, that forms the closure
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    // function makeFunc() {
+    //   const name = "Saja";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   return displayName;
+    // }
+    // const myFunc = makeFunc();
+    // myFunc();
+
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = `orange`;
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = `green`;
+    // };
+
+    function clickHandler(color) {
+      // document.body.style.backgroundColor = `${color}`;
+
+      //clickHandler returns an inner anonymous function.
+      // That inner function remembers the variable color from its outer scope.
+      // This is the essence of a closure — the returned function "closes over" the color variable.
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      }; // he inner function has access to color because it was defined inside clickHandler, and lexical scoping allows access to outer variables
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+    //   what happens when clickHandler("orange") is executed:
+    // color = "orange" is set.
+    // The returned inner function (the closure) remembers color = "orange".
+    // This function is assigned to the onclick event of the #orange element.
+    // Similarly for "green"
+  </script>
+</html>
+
+<!-- Closure in Action
+When the inner function is triggered by clicking the button:
+
+It executes and uses the color value it closed over.
+
+Even though clickHandler() finished running earlier, the returned function remembers the value of color. -->
